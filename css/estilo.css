@@ -1,0 +1,11 @@
+#container{
+	border-style: solid;
+	border-bottom-width: 1px;
+	width:50%;
+	float: left;
+	
+}
+select,input{
+	margin: 10px;
+
+}
