@@ -18,7 +18,7 @@ function enviarDados(){
 	var data = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
 	var hora = formulario.querySelector("#hora").value;
 	var tipoDeAtendimento = formulario.querySelector("#tipoDeAtendimento").value;
-	console.log(tipoDeAtendimento);
+	var nomedoPaciente = formulario.querySelector("#nomePaciente").value;
 	var telefonePaciente = "phone=5511" + formulario.querySelector("#telefonePaciente").value;
 	var url = "https://web.whatsapp.com//send?";
 
@@ -36,6 +36,7 @@ function enviarDados(){
 
 	var msgOla = "&text=Olá, %0A";
 	var msgTipoDeAtendimento = "Estamos confirmando " + tipoDeAtendimento;
+	var msgNomeDoPaciente = " de " + nomedoPaciente;
 	var msgMedico = " com o(a) " + "*" + medico + "*"; //verificar os atendimentos e fazer uma list
 	var msgDia = " dia " + "*" + data + "*";
 	var msgHora = " às " + "*" + hora + "*";
@@ -47,7 +48,7 @@ function enviarDados(){
 	var msgOrientacoes4 = "✔ Este serviço está disponível apenas para confirmações. Agendamentos ou maiores informações ligue: " + telUnidade;
 
 	
-	var mensagem = msgOla + msgTipoDeAtendimento + msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;
+	var mensagem = msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;
 	window.open( url + telefonePaciente + mensagem);
 }
 function formatarData(data){
