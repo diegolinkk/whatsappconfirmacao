@@ -2,40 +2,46 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<style>
-		input,select{
-			margin: 10px;
-		}
-	</style>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<title>Whatsapp Alergo Dermatologia</title>
 </head>
 <body>
+
 	<a href="http://www.alergodermatologia.com.br" target="blank"> <img src="http://www.alergodermatologia.com.br/ass/Well-assinatura-alergo.jpg" alt="" width="654" height="59" border="0" /></a>
 	<h1> Confirmação de agendamento por Whatsapp</h1>
-	Selecionar unidade: 
-	<select id="selectUnidades">
-		<option value="tatuape"> Tatuapé </option>
-		<option value="tatuape2"> Tatuapé 2 </option>
-		<option value="santaCruz"> Santa Cruz </option>
-		<option value="saoCaetano"> São Caetano </option>
-		<option value="lapa"> Lapa </option>
-		<option value="santoAndre"> Santo André</option>
-		<option value="santoAmaro"> Santo Amaro </option>
-	</select>
+	<div id="divFormulario">
+		Selecionar unidade: 
+		<select id="selectUnidades" class="larguraCheia">
+			<option value="tatuape"> Tatuapé </option>
+			<option value="tatuape2"> Tatuapé 2 </option>
+			<option value="santaCruz"> Santa Cruz </option>
+			<option value="saoCaetano"> São Caetano </option>
+			<option value="lapa"> Lapa </option>
+			<option value="santoAndre"> Santo André</option>
+			<option value="santoAmaro"> Santo Amaro </option>
+		</select>
 
-	<form id="formulario" action="https://web.whatsapp.com/send" type="get" target="_blank">
-		Atendimento: <select id="tipoDeAtendimento" name ="tipoDeAtendimento">
-			<option value="a consulta"> consulta </option>
-			<option value="o procedimento"> procedimento </option>
-		</select>  </br>
-		Médicos: <select id="medicos" name="medico"> </select> </br>
-		Data: <input id="data" type="date"> </input> </br>
-		Hora: <input id="hora" type="time"> </input> </br>
-		Nome do paciente <input id="nomePaciente" type="text"> </input> </br>
-		Telefone do paciente (11): <input id="telefonePaciente" name="phone" type="text" > </input> </br>
-		<input id="enviar" type="submit" value="enviar"> </input>
-	</form>
-	<script src="js/dadosUnidades.js"> </script>
-	<script src="js/enviar.js"> </script>
+		<form id="formulario" action="https://web.whatsapp.com/send" type="get" target="_blank">
+			Atendimento: <select id="tipoDeAtendimento" name ="tipoDeAtendimento">
+				<option value="a consulta"> consulta </option>
+				<option value="o procedimento"> procedimento </option>
+				<option value="o teste de contato"> teste de contato </option>
+			</select>  </br>
+			Médicos: <select id="medicos" name="medico"> </select> </br>
+			Data: <input id="data" type="date"> </input>
+			Hora: <input id="hora" type="time"> </input> </br>
+			<span id="spanTesteDeContato"class="escondido"> 
+				Data 2: <input id="data2" type="date"> </input> 
+				Hora 2: <input id="hora2" type="time"> </input> </br>
+				Data 3: <input id="data3" type="date"> </input>
+				Hora 3: <input id="hora3" type="time"> </input> </br> 
+			</span>
+			Nome do paciente <input id="nomePaciente" type="text"> </input> </br>
+			Telefone do paciente (11): <input id="telefonePaciente" name="phone" type="text" > </input> </br>
+			<input id="enviar" type="submit" value="enviar"> </input>
+		</form>
+		<script src="js/dadosUnidades.js"> </script>
+		<script src="js/enviar.js"> </script>
+	</div>
 </body>
 </html>

@@ -1,58 +1,92 @@
 //carregando dados das unidades
 var selectUnidade = document.querySelector("#selectUnidades");
-carregarDadosUnidade(selectUnidade.value);
+var selectTipoDeAtendimento = document.querySelector("#tipoDeAtendimento");
+
+//se recarregar a página, mantém a integridade dos dados do formulário
+	carregarDadosUnidade(selectUnidade.value);
+	if(selectTipoDeAtendimento.value == "o teste de contato"){
+		mostraDataTC();
+	}else{
+		escondeDataTC();
+	}
+selectTipoDeAtendimento.addEventListener("change", function(){
+
+	if(this.value == "o teste de contato"){
+		mostraDataTC();
+	}else{
+		escondeDataTC();
+	}
+});
 
 selectUnidade.addEventListener("change",function(){
 	//quando muda unidade, recarrega os dados da unidade
 	carregarDadosUnidade(this.value);
 });
 
+
 var formulario = document.querySelector("#formulario");
 var enviar = formulario.querySelector("#enviar");
 
-enviar.addEventListener("click",enviarDados); //evento de enviar dados
+enviar.addEventListener("click",function(){
+	var tipoDeAtendimento = formulario.querySelector("#tipoDeAtendimento").value;
+	enviarDados(tipoDeAtendimento); //evento de enviar dados
+});
 
-function enviarDados(){
+function enviarDados(atendimento){
+	//definindo as variáveis
 	event.preventDefault(); //parando o enviar padrão do form
 	var medico = formulario.querySelector("#medicos").value; //funcionando
 	var data = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
 	var hora = formulario.querySelector("#hora").value;
+	//data e hora do TC (caso existir)
+	var data2 = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
+	var hora2 = formulario.querySelector("#hora").value;
+	var data3 = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
+	var hora3 = formulario.querySelector("#hora").value;
+	
 	var tipoDeAtendimento = formulario.querySelector("#tipoDeAtendimento").value;
 	var nomedoPaciente = formulario.querySelector("#nomePaciente").value;
 	var telefonePaciente = "phone=5511" + formulario.querySelector("#telefonePaciente").value;
 	var url = "https://web.whatsapp.com//send?";
 
-	//composição da mensagem de envio
-	// var msg1 = "&text=Confirmação de agendamento dia " + data;
-	// var msg2 = " as " + hora;
-	// var msg3 = " horas com " + medico;
-	// var msg4 = " na Alergo Dermatologia unidade " + nomeUnidade;
-	// var msg5 = " no endereço " + enderecoUnidade;
-	// var msg6 = ". Para mais informações, ligue: " + telUnidade;
-	// var mensagem = msg1 +  msg2 + msg3  + msg4  + msg5 + msg6;
+	if(atendimento != "o teste de contato"){
+		//criando a msg de consulta ou procedimento
+		var inicioTexto = "&text=";
+		var msgOla = "Olá, %0A";
+		var msgTipoDeAtendimento = "Estamos confirmando " + tipoDeAtendimento;
+		var msgNomeDoPaciente = " de " + nomedoPaciente;
+		var msgMedico = " com o(a) " + "*" + medico + "*"; //verificar os atendimentos e fazer uma list
+		var msgDia = " dia " + "*" + data + "*";
+		var msgHora = " às " + "*" + hora + "*";
+		var msgUnidade = " na unidade da Alergo Dermatologia " + "*" + nomeUnidade + "*" +".%0A";
+		var msgEndereco = "Endereço de atendimento:%0A" + "*" + enderecoUnidade  + referenciaUnidade + "*";
+		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
+		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
+		var msgOrientacoes4 = "✔ Este serviço está disponível apenas para confirmações. Agendamentos ou maiores informações ligue: " + telUnidade;
 
-	//mensagem 2.0 (a acima está funcionando)
-	//%0A = nova linha;
-
-	var msgOla = "&text=Olá, %0A";
-	var msgTipoDeAtendimento = "Estamos confirmando " + tipoDeAtendimento;
-	var msgNomeDoPaciente = " de " + nomedoPaciente;
-	var msgMedico = " com o(a) " + "*" + medico + "*"; //verificar os atendimentos e fazer uma list
-	var msgDia = " dia " + "*" + data + "*";
-	var msgHora = " às " + "*" + hora + "*";
-	var msgUnidade = " na unidade da Alergo Dermatologia " + "*" + nomeUnidade + "*" +".%0A";
-	var msgEndereco = "Endereço de atendimento:%0A" + "*" + enderecoUnidade  + referenciaUnidade + "*";
-	var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
-	var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
-	var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
-	var msgOrientacoes4 = "✔ Este serviço está disponível apenas para confirmações. Agendamentos ou maiores informações ligue: " + telUnidade;
-
-	
-	var mensagem = msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;
+		var mensagem = inicioTexto+ msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;		
+	}
+	else{
+		var inicioTexto =  "&text=";
+		var msgOla = "Olá, estamos confirmando o  agendamento ";
+		var msgNomeDoPaciente = " de " + nomedoPaciente;
+		var msgTipoDeAtendimento = " para " + tipoDeAtendimento;
+		var msgDiaHora1 = " nos dias "+data+ " às " + hora;
+		var msgDiaHora2 = ", retorno para dia " + data2 + " às " + hora2;
+		var msgDiaHora3 = " e atendimento com o médico dia " + data3 + " às " + hora3;
+		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
+		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
+		var msgOrientacoes4 = "✔ Este serviço está disponível apenas para confirmações. Agendamentos ou maiores informações ligue: " + telUnidade;
+		
+		var mensagem = inicioTexto + msgOla + msgNomeDoPaciente + msgTipoDeAtendimento + msgDiaHora1 + msgDiaHora2 + msgDiaHora3 + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;
+		
+	}
+	// console.log(url,telefonePaciente,mensagem);
 	window.open( url + telefonePaciente + mensagem);
 }
 function formatarData(data){
-	//funcionando
 	//recebe 2019-08-30 e retorna 30/08/2019
 	var ano = data.substring(0,4);
 	var mes = data.substring(5,7);
@@ -61,3 +95,11 @@ function formatarData(data){
 	return dataFormatada;
 }
 
+function mostraDataTC(){
+	var spanTC = document.querySelector("#spanTesteDeContato");
+	spanTC.classList.remove("escondido");
+}
+function escondeDataTC(){
+	var spanTC = document.querySelector("#spanTesteDeContato");
+	spanTC.classList.add("escondido");
+}

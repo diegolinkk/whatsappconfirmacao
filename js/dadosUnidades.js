@@ -77,11 +77,11 @@ function dadosST(){
 function dadosSC(){
 	nomeUnidade = "São Caetano";
 	enderecoUnidade = "Rua Niterói, 237";
-	referenciaUnidade = "(Próximo à estação São Caetano e ao terminal de ônibus)";
+	referenciaUnidade = "(próximo ao Senai)";
 	telUnidade = "11 4228-7344";
 	medicos = [
 		"Dr.São Caetano",
-		"Dr.São Caetano2"
+		"Dr.São Caetano"
 	];
 }
 function dadosLA(){
