@@ -63,9 +63,8 @@ function enviarDados(atendimento){
 		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
 		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
-		var msgOrientacoes4 = "✔ Este serviço está disponível apenas para confirmações. Agendamentos ou maiores informações ligue: " + telUnidade;
 
-		var mensagem = inicioTexto+ msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;		
+		var mensagem = inicioTexto+ msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3;
 	}
 	else{
 		var inicioTexto =  "&text=";
@@ -80,12 +79,16 @@ function enviarDados(atendimento){
 		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
 		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
-		var msgOrientacoes4 = "✔ Este serviço está disponível apenas para confirmações. Agendamentos ou maiores informações ligue: " + telUnidade;
 		
-		var mensagem = inicioTexto + msgOla + msgNomeDoPaciente + msgTipoDeAtendimento + msgDiaHora1 + msgDiaHora2 + msgDiaHora3 + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4;
-		
+		var mensagem = inicioTexto + msgOla + msgNomeDoPaciente + msgTipoDeAtendimento + msgDiaHora1 + msgDiaHora2 + msgDiaHora3 + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3;
 	}
-	// console.log(url,telefonePaciente,mensagem);
+	
+	//se não agendar, inclui o aviso que não agenda
+if(nomeUnidade == "Tatuapé" || nomeUnidade == "Santa Cruz" || nomeUnidade == "São Caetano" || nomeUnidade == "Santo André"|| nomeUnidade == "Santo Amaro"){
+		mensagem +="✔ Este serviço está disponível apenas para confirmações";
+	}
+	
+	mensagem +="%0AAgendamentos ou maiores informações ligue: " + telUnidade;
 	window.open( url + telefonePaciente + mensagem);
 }
 function formatarData(data){
