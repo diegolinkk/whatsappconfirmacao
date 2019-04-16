@@ -76,10 +76,10 @@ function enviarDados(atendimento){
 	}
 	else{
 		var inicioTexto =  "&text=";
-		var msgOla = "Olá, estamos confirmando o  agendamento ";
+		var msgOla = "Olá, estamos confirmando o  *teste*";
 		var msgNomeDoPaciente = " de " + txtNegrito(nomedoPaciente);
-		var msgTipoDeAtendimento = " para " + txtNegrito(tipoDeAtendimento);
-		var msgDiaHora1 = " nos dias:%0A"+txtNegrito(data)+ " às " + txtNegrito(hora);
+		var msgTipoDeAtendimento = " para:";
+		var msgDiaHora1 = "%0A"+txtNegrito(data)+ " às " + txtNegrito(hora);
 		var msgDiaHora2 = "%0A" + txtNegrito(data2) + " às " + txtNegrito(hora2);
 		var msgDiaHora3 = "%0A" + txtNegrito(data3) + " às " + txtNegrito(hora3);
 		var msgUnidade = "%0ANa unidade da Alergo Dermatologia " + txtNegrito(nomeUnidade) +".%0A";
@@ -87,8 +87,10 @@ function enviarDados(atendimento){
 		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
 		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
+		var msgOrientacoes4 = "✔ Para realização do exame é necessário seguir as orientações passadas previamente. A validade do pedido médico é de 90 dias.%0A";
+		var msgOrientacoes5 = "✔ Caso não possa comparecer, avise-nos por gentileza. O não comparecimento no primeiro dia agendado cancela automaticamente as demais datas.%0A";
 		
-		var mensagem = inicioTexto + msgOla + msgNomeDoPaciente + msgTipoDeAtendimento + msgDiaHora1 + msgDiaHora2 + msgDiaHora3 + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3;
+		var mensagem = inicioTexto + msgOla + msgNomeDoPaciente + msgTipoDeAtendimento + msgDiaHora1 + msgDiaHora2 + msgDiaHora3 + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4 + msgOrientacoes5;
 	}
 	
 	//se não agendar, inclui o aviso que não agenda
