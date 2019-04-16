@@ -46,7 +46,15 @@ function enviarDados(atendimento){
 	
 	var tipoDeAtendimento = formulario.querySelector("#tipoDeAtendimento").value;
 	var nomedoPaciente = formulario.querySelector("#nomePaciente").value;
-	var telefonePaciente = "phone=5511" + formulario.querySelector("#telefonePaciente").value;
+	
+	//validando se tem prefixo ou não
+	var telefonePaciente = formulario.querySelector("#telefonePaciente").value;
+	if(telefonePaciente.length <= 10){
+		telefonePaciente = "phone=5511" + telefonePaciente;
+	}else{
+		telefonePaciente = "phone=55" + telefonePaciente;
+	}
+	
 	var url = "https://web.whatsapp.com//send?";
 
 	if(atendimento != "o teste de contato"){
@@ -84,12 +92,12 @@ function enviarDados(atendimento){
 	}
 	
 	//se não agendar, inclui o aviso que não agenda
-if(nomeUnidade == "Tatuapé" || nomeUnidade == "Santa Cruz" || nomeUnidade == "São Caetano" || nomeUnidade == "Santo André"|| nomeUnidade == "Santo Amaro"){
+	if(nomeUnidade == "Tatuapé" || nomeUnidade == "Santa Cruz" || nomeUnidade == "São Caetano" || nomeUnidade == "Santo André"|| nomeUnidade == "Santo Amaro"){
 		mensagem +="✔ Este serviço está disponível apenas para confirmações";
 	}
 	
-	mensagem +="%0AAgendamentos ou maiores informações ligue: " + telUnidade;
-	window.open( url + telefonePaciente + mensagem);
+	 mensagem +="%0AAgendamentos ou maiores informações ligue: " + telUnidade;
+	 window.open( url + telefonePaciente + mensagem);
 }
 function formatarData(data){
 	//recebe 2019-08-30 e retorna 30/08/2019
