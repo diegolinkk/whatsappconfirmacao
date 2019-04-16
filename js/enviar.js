@@ -39,10 +39,10 @@ function enviarDados(atendimento){
 	var data = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
 	var hora = formulario.querySelector("#hora").value;
 	//data e hora do TC (caso existir)
-	var data2 = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
-	var hora2 = formulario.querySelector("#hora").value;
-	var data3 = formatarData(formulario.querySelector("#data").value); //deixa data correta - funcionando
-	var hora3 = formulario.querySelector("#hora").value;
+	var data2 = formatarData(formulario.querySelector("#data2").value); //deixa data correta - funcionando
+	var hora2 = formulario.querySelector("#hora2").value;
+	var data3 = formatarData(formulario.querySelector("#data3").value); //deixa data correta - funcionando
+	var hora3 = formulario.querySelector("#hora3").value;
 	
 	var tipoDeAtendimento = formulario.querySelector("#tipoDeAtendimento").value;
 	var nomedoPaciente = formulario.querySelector("#nomePaciente").value;
@@ -79,10 +79,10 @@ function enviarDados(atendimento){
 		var msgOla = "Olá, estamos confirmando o  agendamento ";
 		var msgNomeDoPaciente = " de " + txtNegrito(nomedoPaciente);
 		var msgTipoDeAtendimento = " para " + txtNegrito(tipoDeAtendimento);
-		var msgDiaHora1 = " nos dias "+txtNegrito(data)+ " às " + txtNegrito(hora);
-		var msgDiaHora2 = ", retorno para dia " + txtNegrito(data2) + " às " + txtNegrito(hora2);
-		var msgDiaHora3 = " e atendimento com o médico dia " + txtNegrito(data3) + " às " + txtNegrito(hora3);
-		var msgUnidade = " na unidade da Alergo Dermatologia " + txtNegrito(nomeUnidade) +".%0A";
+		var msgDiaHora1 = " nos dias:%0A"+txtNegrito(data)+ " às " + txtNegrito(hora);
+		var msgDiaHora2 = "%0A" + txtNegrito(data2) + " às " + txtNegrito(hora2);
+		var msgDiaHora3 = "%0A" + txtNegrito(data3) + " às " + txtNegrito(hora3);
+		var msgUnidade = "%0ANa unidade da Alergo Dermatologia " + txtNegrito(nomeUnidade) +".%0A";
 		var msgEndereco = "Endereço de atendimento:%0A" + txtNegrito(enderecoUnidade) + txtNegrito(referenciaUnidade);
 		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
@@ -92,7 +92,7 @@ function enviarDados(atendimento){
 	}
 	
 	//se não agendar, inclui o aviso que não agenda
-	if(nomeUnidade == "Tatuapé" || nomeUnidade == "Santa Cruz" || nomeUnidade == "São Caetano" || nomeUnidade == "Santo André"|| nomeUnidade == "Santo Amaro"){
+	if(nomeUnidade == "Tatuapé" || nomeUnidade == "São Caetano" || nomeUnidade == "Santo André"|| nomeUnidade == "Santo Amaro"){
 		mensagem +="✔ Este serviço está disponível apenas para confirmações";
 	}
 	
