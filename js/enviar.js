@@ -96,9 +96,12 @@ function enviarDados(atendimento){
 	//se não agendar, inclui o aviso que não agenda
 	if(nomeUnidade == "Tatuapé" || nomeUnidade == "São Caetano" || nomeUnidade == "Santo André"|| nomeUnidade == "Santo Amaro"){
 		mensagem +="✔ Este serviço está disponível apenas para confirmações";
+		mensagem +="%0AAgendamentos ou maiores informações ligue: " + telUnidade;
+	}else{
+		mensagem +="%0AMaiores informações ligue: " + telUnidade;
 	}
 	
-	 mensagem +="%0AAgendamentos ou maiores informações ligue: " + telUnidade;
+	 
 	 window.open( url + telefonePaciente + mensagem);
 }
 function formatarData(data){
