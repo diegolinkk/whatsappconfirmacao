@@ -70,8 +70,8 @@ function dadosST(){
 	referenciaUnidade = "(Próximo Metrô Santa Cruz, e ao Habib's)";
 	telUnidade = "11 3149-2888";
 	medicos = [
-		"Dra.Santa Cruz",
-		"Dra.Santa Cruz2"
+		"Dr.Santa Cruz1",
+		"Dr.Santa Cruz2"
 	];
 }
 function dadosSC(){

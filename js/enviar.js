@@ -23,7 +23,6 @@ selectUnidade.addEventListener("change",function(){
 	carregarDadosUnidade(this.value);
 });
 
-
 var formulario = document.querySelector("#formulario");
 var enviar = formulario.querySelector("#enviar");
 
@@ -57,24 +56,7 @@ function enviarDados(atendimento){
 	
 	var url = "https://web.whatsapp.com//send?";
 
-	if(atendimento != "o teste de contato"){
-		//criando a msg de consulta ou procedimento
-		var inicioTexto = "&text=";
-		var msgOla = "Olá, %0A";
-		var msgTipoDeAtendimento = "Estamos confirmando " + tipoDeAtendimento;
-		var msgNomeDoPaciente = " de " + nomedoPaciente;
-		var msgMedico = " com o(a) " + "*" + medico + "*"; //verificar os atendimentos e fazer uma list
-		var msgDia = " dia " + "*" + data + "*";
-		var msgHora = " às " + "*" + hora + "*";
-		var msgUnidade = " na unidade da Alergo Dermatologia " + "*" + nomeUnidade + "*" +".%0A";
-		var msgEndereco = "Endereço de atendimento:%0A" + "*" + enderecoUnidade  + referenciaUnidade + "*";
-		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
-		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
-		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
-
-		var mensagem = inicioTexto+ msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3;
-	}
-	else{
+	if(atendimento == "o teste de contato"){
 		var inicioTexto =  "&text=";
 		var msgOla = "Olá, estamos confirmando o  *teste*";
 		var msgNomeDoPaciente = " de " + txtNegrito(nomedoPaciente);
@@ -82,7 +64,7 @@ function enviarDados(atendimento){
 		var msgDiaHora1 = "%0A"+txtNegrito(data)+ " às " + txtNegrito(hora);
 		var msgDiaHora2 = "%0A" + txtNegrito(data2) + " às " + txtNegrito(hora2);
 		var msgDiaHora3 = "%0A" + txtNegrito(data3) + " às " + txtNegrito(hora3);
-		var msgUnidade = "%0ANa unidade da Alergo Dermatologia " + txtNegrito(nomeUnidade) +".%0A";
+		var msgUnidade = "%0ANa unidade  " + txtNegrito(nomeUnidade) +".%0A";
 		var msgEndereco = "Endereço de atendimento:%0A" + txtNegrito(enderecoUnidade) + txtNegrito(referenciaUnidade);
 		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
@@ -91,6 +73,38 @@ function enviarDados(atendimento){
 		var msgOrientacoes5 = "✔ Caso não possa comparecer, avise-nos por gentileza. O não comparecimento no primeiro dia agendado cancela automaticamente as demais datas.%0A";
 		
 		var mensagem = inicioTexto + msgOla + msgNomeDoPaciente + msgTipoDeAtendimento + msgDiaHora1 + msgDiaHora2 + msgDiaHora3 + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4 + msgOrientacoes5;
+	}else if (atendimento == "o teste"){
+		var inicioTexto = "&text=";
+		var msgOla = "Olá, %0A";
+		var msgTipoDeAtendimento = "Estamos confirmando " + tipoDeAtendimento;
+		var msgNomeDoPaciente = " de " + nomedoPaciente;
+		var msgMedico = " com o(a) " + "*" + medico + "*";
+		var msgDia = " dia " + "*" + data + "*";
+		var msgHora = " às " + "*" + hora + "*";
+		var msgUnidade = " na unidade " + "*" + nomeUnidade + "*" +".%0A";
+		var msgEndereco = "Endereço de atendimento:%0A" + "*" + enderecoUnidade  + referenciaUnidade + "*";
+		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
+		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
+		var msgOrientacoes4 = "✔ Para realização do exames é necessário seguir as orientações passadas previamente.%0A";
+		var msgOrientacoes5 = "✔ A validade do pedido médico é de 90 dias.%0A";
+
+		var mensagem = inicioTexto+ msgOla + msgTipoDeAtendimento + msgNomeDoPaciente + msgMedico+ msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3 + msgOrientacoes4+ msgOrientacoes5;
+	}else{//outras mensagens
+		var inicioTexto = "&text=";
+		var msgOla = "Olá, %0A";
+		var msgTipoDeAtendimento = "Estamos confirmando " + tipoDeAtendimento;
+		var msgNomeDoPaciente = " de " + nomedoPaciente;
+		var msgMedico = " com o(a) " + "*" + medico + "*"; //verificar os atendimentos e fazer uma list
+		var msgDia = " dia " + "*" + data + "*";
+		var msgHora = " às " + "*" + hora + "*";
+		var msgUnidade = " na unidade " + "*" + nomeUnidade + "*" +".%0A";
+		var msgEndereco = "Endereço de atendimento:%0A" + "*" + enderecoUnidade  + referenciaUnidade + "*";
+		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
+		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
+
+		var mensagem = inicioTexto+ msgOla + msgTipoDeAtendimento + msgNomeDoPaciente+ msgMedico + msgDia + msgHora + msgUnidade + msgEndereco + msgOrientacoes1 + msgOrientacoes2 + msgOrientacoes3;
 	}
 	
 	//se não agendar, inclui o aviso que não agenda
@@ -100,6 +114,8 @@ function enviarDados(atendimento){
 	}else{
 		mensagem +="%0AMaiores informações ligue: " + telUnidade;
 	}
+	
+	mensagem+="%0AAlergo Dermatologia%0AUnidade " + nomeUnidade;
 	
 	 
 	 window.open( url + telefonePaciente + mensagem);
