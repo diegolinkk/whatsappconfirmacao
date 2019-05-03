@@ -2,7 +2,9 @@ var selectUnidade = document.querySelector("#selectUnidades");
 var selectTipoDeAtendimento = document.querySelector("#tipoDeAtendimento");
 
 //se recarregar a página, mantém a integridade dos dados do formulário
-carregarDadosUnidade(selectUnidade.value);
+dadosUnidade = carregaDadosUnidade(selectUnidade.value);
+carregarListaMedicos(dadosUnidade.medicos);
+
 if(selectTipoDeAtendimento.value == "o teste de contato"){
 	mostraDataTC();
 }else{
@@ -18,5 +20,6 @@ selectTipoDeAtendimento.addEventListener("change", function(){
 
 selectUnidade.addEventListener("change",function(){
 	//quando muda unidade, recarrega os dados da unidade
-	carregarDadosUnidade(this.value);
+	dadosUnidade = carregaDadosUnidade(this.value);
+	carregarListaMedicos(dadosUnidade.medicos);
 });

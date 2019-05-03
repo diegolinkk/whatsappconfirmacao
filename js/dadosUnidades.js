@@ -1,116 +1,85 @@
-﻿//variaveis globais e com informações de cada unidade
-
-function carregarDadosUnidade(unidade){
+﻿function carregaDadosUnidade(unidade){
 	switch(unidade){
 		case "tatuape":
-			dadosTA();
-			break;
+			return{
+				nome: "Tatuapé",
+				endereco: "Rua tuiuti, 1471 - Tatuapé",
+				referencia: "Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo",
+				telefone: "11 2942-1833",
+				fazAgendamentoPorWhatsapp: false,
+				medicos:[
+					"Dr.Tatuapé1",
+					"Dr.Tatuapé2"]}
 		case "tatuape2":
-			dadosTA2();
-			break;
+			return{
+				nome: "Tatuapé",
+				endereco: "Gonçalves Crespo, 220 - Tatuapé",
+				referencia: "Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo",
+				telefone: "11 2942-1833",
+				fazAgendamentoPorWhatsapp: false,
+				medicos:[
+					"Dr.Pr21",
+					"Dr.Pr22"]}
 		case "santaCruz":
-			dadosST();
-			break;
+			return{
+				nome: "Santa Cruz",
+				endereco: "Rua Borges Lagoa, 85 - Santa Cruz",
+				referencia: "Próximo Metrô Santa Cruz, e ao Habib's",
+				telefone: "11 3149-2888",
+				fazAgendamentoPorWhatsapp: true,
+				medicos:[
+					"Dr.Santa Cruz1",
+					"Dr.Santa Cruz2"]}
 		case "saoCaetano":
-			dadosSC();
-			break;
+			return{
+				nome: "São Caetano",
+				endereco: "Rua Niterói, 237 - São Caetano",
+				referencia: "próximo ao Senai",
+				telefone: "11 4228-7344",
+				fazAgendamentoPorWhatsapp: false,
+				medicos: [
+					"Dr.São Caetano",
+					"Dr.São Caetano"]}
 		case "lapa":
-			dadosLA();
-			break;
+			return{
+				nome: "Lapa",
+				endereco: "Rua Tomé de Souza, 186 - Lapa",
+				referencia: "Próximo ao terminal Lapa",
+				telefone: "11 3649-0900",
+				fazAgendamentoPorWhatsapp: true,
+				medicos: [
+					"Dr.Lapa",
+					"Dr.Lapa2"]}
 		case "santoAndre":
-			dadosSA();
-			break;
+			return{
+				nome:"Santo André",
+				endereco: "Rua das Monções, 356",
+				referencia: "(Próximo ao Mc Donalds)",
+				telefone: "11 4433-4133",
+				fazAgendamentoPorWhatsapp: false,
+				medicos: [
+					"Dr.Santo André",
+					"Dr Santo André2"]}
 		case "santoAmaro":
-			dadosSM();
-			break;
+			return{
+				nome: "Santo Amaro",
+				endereco: "Av. Santo Amaro, 6257",
+				referencia: "(Próximo à estação Borba Gato)",
+				telefone: "11 5682-8711",
+				fazAgendamentoPorWhatsapp: false,
+				medicos: [
+					"Dr.Santo Amaro",
+					"Dr.Santo Amaro2"]}
 		default:
-			dadosTA();
+			return{
+				nome: "Tatuapé",
+				endereco: "Rua tuiuti, 1471 - Tatuapé",
+				referencia: "Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo",
+				telefone: "11 2942-1833",
+				fazAgendamentoPorWhatsapp: false,
+				medicos:[
+					"Dr.Tatuapé1",
+					"Dr.Tatuapé2"]}
 	}
-	carregarListaMedicos();
 }
 
-function carregarListaMedicos(){
-	//carrega a select com os nomes dos médicos
-	var listaMedicos = document.querySelector("#medicos");
-	listaMedicos.innerHTML=""; //limpa a lista para preencher novamente
-	
-	//preenche lista
-	medicos.forEach(function(medico,indice){
-		 var optionMedico = document.createElement("option");
-		 optionMedico.value = medico;
-		 optionMedico.textContent = medico;
-		 listaMedicos.appendChild(optionMedico);
-	});
-}
-
-//funções apenas com dados das unidades
-function dadosTA(){
-	nomeUnidade = "Tatuapé";
-	enderecoUnidade = "Rua tuiuti, 1471 - Tatuapé";
-	referenciaUnidade = "(Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo)";
-	telUnidade = "11 2942-1833";
-	medicos = [
-		"Dr.Tatuapé1",
-		"Dr.Tatuapé2"
-	];
-}
-function dadosTA2(){
-	nomeUnidade = "Tatuapé";
-	enderecoUnidade = "Gonçalves Crespo, 220 - Tatuapé";
-	referenciaUnidade = "(Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo)";
-	telUnidade = "11 2942-1833";
-	medicos = [
-		"Dr.Pr21",
-		"Dr.Pr22"
-	];
-}
-function dadosST(){
-	nomeUnidade = "Santa Cruz";
-	enderecoUnidade = "Rua Borges Lagoa, 85";
-	referenciaUnidade = "(Próximo Metrô Santa Cruz, e ao Habib's)";
-	telUnidade = "11 3149-2888";
-	medicos = [
-		"Dr.Santa Cruz1",
-		"Dr.Santa Cruz2"
-	];
-}
-function dadosSC(){
-	nomeUnidade = "São Caetano";
-	enderecoUnidade = "Rua Niterói, 237";
-	referenciaUnidade = "(próximo ao Senai)";
-	telUnidade = "11 4228-7344";
-	medicos = [
-		"Dr.São Caetano",
-		"Dr.São Caetano"
-	];
-}
-function dadosLA(){
-	nomeUnidade = "Lapa";
-	enderecoUnidade = "Rua Tomé de Souza, 186";
-	referenciaUnidade = "(Próximo ao terminal Lapa)";
-	telUnidade = "11 3649-0900";
-	medicos = [
-		"Dr.Lapa",
-		"Dr.Lapa2"
-	];
-}
-function dadosSA(){
-	nomeUnidade = "Santo André";
-	enderecoUnidade = "Rua das Monções, 356";
-	referenciaUnidade = "(Próximo ao Mc Donalds)";
-	telUnidade = "11 4433-4133";
-	medicos = [
-		"Dr.Santo André",
-		"Dr Santo André2"
-	];
-}
-function dadosSM(){
-	nomeUnidade = "Santo Amaro";
-	enderecoUnidade = "Av. Santo Amaro, 6257";
-	referenciaUnidade = "(Próximo à estação Borba Gato)";
-	telUnidade = "11 5682-8711";
-	medicos = [
-		"Dr.Santo Amaro",
-		"Dr.Santo Amaro2"
-	];
-}
