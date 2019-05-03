@@ -8,6 +8,5 @@ enviar.addEventListener("click",function(){
 
 	var url = "https://web.whatsapp.com//send?";
 	var urlTelefone ="phone=";
-	// window.open( url + urlTelefone + dadosFormulario.telefonePaciente + mensagem);
-	console.log(url,urlTelefone,dadosFormulario.telefonePaciente,mensagem);
+	window.open( url + urlTelefone + dadosFormulario.telefonePaciente + mensagem);
 });
