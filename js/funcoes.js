@@ -4,7 +4,11 @@ function formatarData(data){
 	var mes = data.substring(5,7);
 	var dia = data.substring(8,10);
 	var dataFormatada = dia + "/" + mes + "/" + ano;
-	return dataFormatada;
+	
+	//pegando dia da semana
+	var numeroDaSemana = new Date(ano,mes -1,dia).getDay();//mes começa com 0 por isso menos 1 e essa propriedade retorna o dia da semana em numero
+	var diaDaSemana = ["domingo","segunda-feira","terça-feira","quarta-feira","qunta-feira","sexta-feira","sábado"];
+	return dataFormatada + "(" + diaDaSemana[numeroDaSemana] + ")";
 }
 function mostraDataTC(){
 	var spanTC = document.querySelector("#spanTesteDeContato");
