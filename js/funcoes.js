@@ -7,7 +7,7 @@ function formatarData(data){
 	
 	//pegando dia da semana
 	var numeroDaSemana = new Date(ano,mes -1,dia).getDay();//mes começa com 0 por isso menos 1 e essa propriedade retorna o dia da semana em numero
-	var diaDaSemana = ["domingo","segunda-feira","terça-feira","quarta-feira","qunta-feira","sexta-feira","sábado"];
+	var diaDaSemana = ["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"];
 	return dataFormatada + "(" + diaDaSemana[numeroDaSemana] + ")";
 }
 function mostraDataTC(){
