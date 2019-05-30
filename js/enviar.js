@@ -6,7 +6,7 @@ enviar.addEventListener("click",function(){
 	dadosFormulario = pegarDadosFormulario();
 	var mensagem = montarMensagem(dadosFormulario,dadosUnidade);
 
-	var url = "https://web.whatsapp.com//send?";
+	var url = "https://web.whatsapp.com/send?";
 	var urlTelefone ="phone=";
 	window.open( url + urlTelefone + dadosFormulario.telefonePaciente + mensagem);
 	//console.log(url,urlTelefone,dadosFormulario.telefonePaciente,mensagem);
