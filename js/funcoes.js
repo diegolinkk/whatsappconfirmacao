@@ -57,7 +57,7 @@ function pegarDadosFormulario(){
 function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e retorna a mensagem
 	if(dadosFormulario.tipoDeAtendimento == "o teste de contato"){
 		var inicioTexto =  "&text=";
-		var msgOla = "Olá, estamos confirmando o  *teste*";
+		var msgOla = "Olá, poderiamos confirmar o  *teste*";
 		var msgNomeDoPaciente = " de " + txtNegrito(dadosFormulario.nomedoPaciente);
 		var msgTipoDeAtendimento = " para:";
 		var msgDiaHora1 = "%0A"+txtNegrito(dadosFormulario.data)+ " às " + txtNegrito(dadosFormulario.hora);
@@ -75,7 +75,7 @@ function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e reto
 	}else if (dadosFormulario.tipoDeAtendimento == "o teste"){
 		var inicioTexto = "&text=";
 		var msgOla = "Olá, %0A";
-		var msgTipoDeAtendimento = "Estamos confirmando " + dadosFormulario.tipoDeAtendimento;
+		var msgTipoDeAtendimento = "poderiamos confirmar " + dadosFormulario.tipoDeAtendimento;
 		var msgNomeDoPaciente = " de " + dadosFormulario.nomedoPaciente;
 		var msgMedico = " com o(a) " + "*" + dadosFormulario.medico + "*";
 		var msgDia = " dia " + "*" + dadosFormulario.data + "*";
@@ -93,7 +93,7 @@ function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e reto
 	}else{//outras mensagens
 		var inicioTexto = "&text=";
 		var msgOla = "Olá, %0A";
-		var msgTipoDeAtendimento = "Estamos confirmando " + dadosFormulario.tipoDeAtendimento;
+		var msgTipoDeAtendimento = "poderiamos confirmar " + dadosFormulario.tipoDeAtendimento;
 		var msgNomeDoPaciente = " de " + dadosFormulario.nomedoPaciente;
 		var msgMedico = " com o(a) " + "*" + dadosFormulario.medico + "*"; //verificar os atendimentos e fazer uma list
 		var msgDia = " dia " + "*" + dadosFormulario.data + "*";
