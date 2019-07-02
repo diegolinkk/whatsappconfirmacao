@@ -63,9 +63,9 @@ function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e reto
 		var msgDiaHora1 = "%0A"+txtNegrito(dadosFormulario.data)+ " às " + txtNegrito(dadosFormulario.hora);
 		var msgDiaHora2 = "%0A" + txtNegrito(dadosFormulario.data2) + " às " + txtNegrito(dadosFormulario.hora2);
 		var msgDiaHora3 = "%0A" + txtNegrito(dadosFormulario.data3) + " às " + txtNegrito(dadosFormulario.hora3);
-		var msgUnidade = "%0ANa unidade  " + txtNegrito(dadosUnidade.nome) +".%0A";
+		var msgUnidade = "%0ANa unidade  " + txtNegrito(dadosUnidade.nome) +"?%0A";
 		var msgEndereco = "Endereço de atendimento:%0A" + txtNegrito(dadosUnidade.endereco) + txtNegrito(dadosUnidade.referencia);
-		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes1 = "%0AImportante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
 		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
 		var msgOrientacoes4 = "✔ Para realização do exame é necessário seguir as orientações passadas previamente. A validade do pedido médico é de 90 dias.%0A";
@@ -80,9 +80,9 @@ function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e reto
 		var msgMedico = " com o(a) " + "*" + dadosFormulario.medico + "*";
 		var msgDia = " dia " + "*" + dadosFormulario.data + "*";
 		var msgHora = " às " + "*" + dadosFormulario.hora + "*";
-		var msgUnidade = " na unidade " + "*" + dadosUnidade.nome + "*" +".%0A";
+		var msgUnidade = " na unidade " + "*" + dadosUnidade.nome + "*" +"?%0A";
 		var msgEndereco = "Endereço de atendimento:%0A" + "*" + dadosUnidade.endereco  + dadosUnidade.referencia + "*";
-		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes1 = "%0A  Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
 		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
 		var msgOrientacoes4 = "✔ Para realização do exames é necessário seguir as orientações passadas previamente.%0A";
@@ -98,9 +98,9 @@ function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e reto
 		var msgMedico = " com o(a) " + "*" + dadosFormulario.medico + "*"; //verificar os atendimentos e fazer uma list
 		var msgDia = " dia " + "*" + dadosFormulario.data + "*";
 		var msgHora = " às " + "*" + dadosFormulario.hora + "*";
-		var msgUnidade = " na unidade " + "*" + dadosUnidade.nome + "*" +".%0A";
+		var msgUnidade = " na unidade " + "*" + dadosUnidade.nome + "*" +"?%0A";
 		var msgEndereco = "Endereço de atendimento:%0A" + "*" + dadosUnidade.endereco  + dadosUnidade.referencia + "*";
-		var msgOrientacoes1 = "%0A !!! Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
+		var msgOrientacoes1 = "%0A  Importante: %0A✔ Chegar com 15 minutos de antecedência para o atendimento na recepção. %0A";
 		var msgOrientacoes2 = "✔ No dia é obrigatório apresentar um documento com foto e carteirinha física ou digital do convênio.%0A";
 		var msgOrientacoes3 = "✔ Caso não possa comparecer, avise-nos por gentileza.%0A";
 
@@ -112,7 +112,8 @@ function montarMensagem(dadosFormulario,dadosUnidade){ //monta a mensagem e reto
 		mensagem +="%0AMaiores informações ligue: " + dadosUnidade.telefone;
 	}else{
 		mensagem +="✔ Este serviço está disponível apenas para confirmações";
-		mensagem +="%0AAgendamentos ou maiores informações ligue: " + dadosUnidade.telefone;
+		mensagem +="%0A✔ Agendamentos ou maiores informações ligue: " + dadosUnidade.telefone;
+		mensagem +="%0A✔ *Se possível, por favor responder esta mensagem*";
 	}
 	
 	mensagem+="%0AAlergo Dermatologia%0AUnidade " + dadosUnidade.nome;
