@@ -2,14 +2,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/estilo.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<title>Whatsapp Alergo Dermatologia</title>
 </head>
 <body>
-	<h5 class="text-success">Confirmação de Agendamento por WhatsApp Alergo </h5>
 	<form id="formulario" action="https://web.whatsapp.com/send" type="get" target="_blank">
-	<div class="container-fluid">
+	<div class="container">
+		
+		<p class="text-primary">Confirmação de agenda - Whatsapp Alergo</p>
 		<div class="form-row">
 			<div class="form-group col-lg-4 col-xs-12">
 				<label for="selectUnidades">Selecionar unidade: </label>
@@ -45,7 +47,7 @@
 			<input id="hora" type="time" class="form-control"> </input>
 		</div>
 		
-		<div id="divTesteDeContato" class="form-row" hidden>
+		<div id="divTesteDeContato" class="form-row d-none">
 			<div class="form group col-lg-6 col-xs-12">
 				<label for="data2">Data 2: </label> 
 				<input id="data2" type="date" class="form-control"> </input> 

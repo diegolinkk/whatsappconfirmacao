@@ -12,11 +12,11 @@ function formatarData(data){
 }
 function mostraDataTC(){
 	var divTc = document.querySelector("#divTesteDeContato");
-	divTc.removeAttribute("hidden");
+	divTc.classList.remove("d-none");
 }
 function escondeDataTC(){
 	var divTc = document.querySelector("#divTesteDeContato");
-	divTc.setAttribute("hidden","");
+	divTc.classList.add("d-none");
 }
 function txtNegrito(texto){
 	return "*" + texto + "*";
