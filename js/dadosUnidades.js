@@ -4,52 +4,121 @@
 			return{
 				nome: "Tatuapé",
 				endereco: "Rua tuiuti, 1471 - Tatuapé",
-				referencia: "Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo",
+				referencia: "(Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo)",
 				telefone: "11 2942-1833",
 				fazAgendamentoPorWhatsapp: false,
 				medicos:[
-					"Dr.Tatuapé1",
-					"Dr.Tatuapé2"]}
+					"Dr.Sergio",
+					"Dra.Márcia",
+					"Dra.Ellen",
+					"Dra.Telma",
+					"Dr.Roberto",
+					"Dra.Priscila",
+					"Dra.Tatiana",
+					"Dr.Fábio",
+					"Dra.Cristiane",
+					"Dra.Bomi",
+					"Dra.Jussara",
+					"Dr.Marcos",
+					"Dra.Karina",
+					"Dra. Simone",
+					"Dra. Daniela",
+					"Dra. Patricia",
+					"Dra. Thais",
+					"Dr. Wirlei",
+					"Esteticista",
+					"Enfermagem"]}
 		case "tatuape2":
 			return{
 				nome: "Tatuapé",
 				endereco: "Gonçalves Crespo, 220 - Tatuapé",
-				referencia: "Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo",
+				referencia: "(Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Na rua do Shopping Boulevard Tatuapé)",
 				telefone: "11 2942-1833",
 				fazAgendamentoPorWhatsapp: false,
 				medicos:[
-					"Dr.Pr21",
-					"Dr.Pr22"]}
+					"Dr.Sergio",
+					"Dra.Márcia",
+					"Dra.Ellen",
+					"Dra.Telma",
+					"Dr.Roberto",
+					"Dra.Priscila",
+					"Dra.Tatiana",
+					"Dr.Fábio",
+					"Dra.Cristiane",
+					"Dra.Bomi",
+					"Dra.Jussara",
+					"Dr.Marcos",
+					"Dra.Karina",
+					"Dra. Simone",
+					"Dra. Daniela",
+					"Dra. Patricia",
+					"Dra. Thais",
+					"Dr. Wirlei",
+					"Esteticista",
+					"Enfermagem"]}
 		case "santaCruz":
 			return{
 				nome: "Santa Cruz",
 				endereco: "Rua Borges Lagoa, 85 - Santa Cruz",
-				referencia: "Próximo Metrô Santa Cruz, e ao Habib's",
+				referencia: "(Próximo Metrô Santa Cruz, e ao Habib's)",
 				telefone: "11 3149-2888",
 				fazAgendamentoPorWhatsapp: true,
 				medicos:[
-					"Dr.Santa Cruz1",
-					"Dr.Santa Cruz2"]}
+					"Dra Aline",
+					"Dra Ana Carolina",
+					"Dra Edilamara",
+					"Dr Felipe",
+					"Dra Flavia",
+					"Dr Gilson",
+					"Dra Grace",
+					"Dra Kelly",
+					"Dra Leticia",
+					"Dra Marieli",
+					"Dra Priscila",
+					"Dra Rafaella",
+					"Dra Silvia",
+					"Dra Tatiana",
+					"Dra Julia",
+					"Esteticista",
+					"Enfermagem"]}
 		case "saoCaetano":
 			return{
 				nome: "São Caetano",
 				endereco: "Rua Niterói, 237 - São Caetano",
-				referencia: "próximo ao Senai",
+				referencia: "(próximo ao Senai)",
 				telefone: "11 4228-7344",
 				fazAgendamentoPorWhatsapp: false,
 				medicos: [
-					"Dr.São Caetano",
-					"Dr.São Caetano"]}
+					"Lais Rúbio",
+					"Camilla Guimarães",
+					"Marcelo Massaki",
+					"Aline Morgado",
+					"Marieli Barguil",
+					"Ana Gabriela",
+					"Flávia Motta",
+					"Carolina Beloto",
+					"Roberto Bezerra",
+					"Nívea Godinho",
+					"Esteticista",
+					"Enfermagem"]}
 		case "lapa":
 			return{
 				nome: "Lapa",
 				endereco: "Rua Tomé de Souza, 186 - Lapa",
-				referencia: "Próximo ao terminal Lapa",
+				referencia: "(Próximo ao terminal Lapa)",
 				telefone: "11 3649-0900",
 				fazAgendamentoPorWhatsapp: true,
 				medicos: [
-					"Dr.Lapa",
-					"Dr.Lapa2"]}
+					"Dr. Daniel Catanho",
+					"Dra. Camila Requena",
+					"Dra Renata Torrecillas",
+					"Dra. Thais Jung",
+					"Dra. Fernanda Ferrara",
+					"Dra. Simone Mayumi",
+					"Dra. Silvia Helena",
+					"Dra. Edilamara Camardella",
+					"Esteticista",
+					"Enfermagem"]}
 		case "santoAndre":
 			return{
 				nome:"Santo André",
@@ -58,28 +127,65 @@
 				telefone: "11 4433-4133",
 				fazAgendamentoPorWhatsapp: false,
 				medicos: [
-					"Dr.Santo André",
-					"Dr Santo André2"]}
+					"Dr. José Agenor",
+					"Dr. Gilson",
+					"Dra. Adriana",
+					"Dra. Ellen",
+					"Dra. Grace",
+					"Dra. Letícia",
+					"Dra. Marilene",
+					"Dra. Rafaella",
+					"Dra. Carolina",
+					"Esteticista",
+					"Enfermagem"]}
 		case "santoAmaro":
 			return{
 				nome: "Santo Amaro",
-				endereco: "Av. Santo Amaro, 6257",
+				endereco: "(Av. Santo Amaro, 6257)",
 				referencia: "(Próximo à estação Borba Gato)",
 				telefone: "11 5682-8711",
 				fazAgendamentoPorWhatsapp: false,
 				medicos: [
-					"Dr.Santo Amaro",
-					"Dr.Santo Amaro2"]}
+					"Dr. Leandro Almeida Bueno de Moraes",
+					"Dra. Andrea",
+					"Dra. Claudia",
+					"Dra. Edilamara",
+					"Dra. Flávia",
+					"Dra. Marjorie Vasconcelos da Silva Ramos",
+					"Dra. Mirian Lang",
+					"Dra. Nélia",
+					"Dra. Nina",
+					"Dra. Nivea",
+					"Dra. Priscilla",
+					"Esteticista",
+					"Enfermagem"]}
 		default:
 			return{
 				nome: "Tatuapé",
 				endereco: "Rua tuiuti, 1471 - Tatuapé",
-				referencia: "Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo",
+				referencia: "(Próximo Metrô Tatuapé, sentido Av. Celso Garcia. Em frente ao Colégio Espírito Santo)",
 				telefone: "11 2942-1833",
 				fazAgendamentoPorWhatsapp: false,
 				medicos:[
-					"Dr.Tatuapé1",
-					"Dr.Tatuapé2"]}
+					"Dr.Sergio",
+					"Dra.Márcia",
+					"Dra.Ellen",
+					"Dra.Telma",
+					"Dr.Roberto",
+					"Dra.Priscila",
+					"Dra.Tatiana",
+					"Dr.Fábio",
+					"Dra.Cristiane",
+					"Dra.Bomi",
+					"Dra.Jussara",
+					"Dr.Marcos",
+					"Dra.Karina",
+					"Dra. Simone",
+					"Dra. Daniela",
+					"Dra. Patricia",
+					"Dra. Thais",
+					"Dr. Wirlei",
+					"Esteticista",
+					"Enfermagem"]}
 	}
 }
-
