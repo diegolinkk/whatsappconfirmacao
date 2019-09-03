@@ -3,17 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/estilo.css">
-		<link rel="stylesheet" type="text/css" href="css/mini-default.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<title>Whatsapp Alergo Dermatologia</title>
 </head>
 <body>
-	<div class = "container"id="divFormulario">
-		<form id="formulario" action="https://web.whatsapp.com/send" type="get" target="_blank">
-		<fieldset>
-		<legend> <span class="icon-phone"> </span>Confirmação de agendamento por Whatsapp </legend>
-			<div class="input-group vertical col-lg-6">
+	<h5 class="text-success">Confirmação de Agendamento por WhatsApp Alergo </h5>
+	<form id="formulario" action="https://web.whatsapp.com/send" type="get" target="_blank">
+	<div class="container-fluid">
+		<div class="form-row">
+			<div class="form-group col-md-4">
 				<label for="selectUnidades">Selecionar unidade: </label>
-				<select id="selectUnidades" class="larguraCheia">
+				<select id="selectUnidades" class="form-control">
 					<option value="tatuape">Tatuapé </option>
 					<option value="tatuape2">Tatuapé 2 </option>
 					<option value="santaCruz">Santa Cruz </option>
@@ -22,53 +22,62 @@
 					<option value="santoAndre">Santo André</option>
 					<option value="santoAmaro">Santo Amaro </option>
 				</select>
-				</div>
-				<div class="input-group vertical col-lg-6">
-					<label for="tipoDeAtendimento"> Atendimento: </label>
-					<select id="tipoDeAtendimento" name ="tipoDeAtendimento">
-						<option value="a consulta">consulta </option>
-						<option value="o procedimento">procedimento </option>
-						<option value="o teste">outros testes</option>
-						<option value="o teste de contato">teste de contato</option>
-					</select>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="tipoDeAtendimento"> Atendimento: </label>
+				<select id="tipoDeAtendimento" name ="tipoDeAtendimento" class="form-control">
+					<option value="a consulta">consulta </option>
+					<option value="o procedimento">procedimento </option>
+					<option value="o teste">outros testes</option>
+					<option value="o teste de contato">teste de contato</option>
+				</select>
+			</div>
+			<div class="form-group col-md-4">
 				<label for="medicos">Médicos: </label>
-				<select id="medicos" name="medico"> </select>
+				<select id="medicos" name="medico" class="form-control"> </select>
 			</div>
-			<div class="input-group fluid col-lg-6">
-				<label for="data">Data 1:</label>
-				<input id="data" type="date"> </input>
-				<label for="hora">Hora 1: </label>
-				<input id="hora" type="time"> </input>
-			</div>
-			<span id="spanTesteDeContato"class="escondido"> 
-				<div class="input-group fluid col-sm-12 col-lg-6">
-					<label for="data2">Data 2: </label> 
-					<input id="data2" type="date"> </input> 
-					<label for="hora2">Hora 2: </label>
-					<input id="hora2" type="time"> </input>
-				</div>
-				<div class="input-group fluid col-sm-12 col-lg-6">
-					<label for="data3">Data 3: </label> 
-					<input id="data3" type="date"> </input>
-					<label for="hora3">Hora 3: </label>
-					<input id="hora3" type="time"> </input>
-				</div>
-			</span>
-			<div class="input-group vertical col-lg-6 col-sm-12">
-				<label for="nomePaciente">Nome do paciente </label>
-				<input id="nomePaciente" type="text"> </input>
-				<label for="telefonePaciente">Telefone do paciente (11): </label>
-				<input id="telefonePaciente" name="phone" type="text" > </input>
-			 </div>
-			<input class="primary"id="enviar" type="submit" value="enviar"> </input>
-			<input class="primary"id="enviar_mobile" type="submit" value="enviar por celular"> </input>
-		</fieldset>
-		</form>
+		</div>
+
+		<div class="form-group">
+			<label for="data">Data 1:</label>
+			<input id="data" type="date" class="form-control"> </input>
+			<label for="hora">Hora 1: </label>
+			<input id="hora" type="time" class="form-control"> </input>
+		</div>
 		
+		<div id="divTesteDeContato" class="form-row" hidden>
+			<div class="form group col-md-6">
+				<label for="data2">Data 2: </label> 
+				<input id="data2" type="date" class="form-control"> </input> 
+				<label for="hora2">Hora 2: </label>
+				<input id="hora2" type="time" class="form-control">  </input>
+			</div>
+				<div class="form group col-md-6">
+				<label for="data3">Data 3: </label> 
+				<input id="data3" type="date" class="form-control"> </input>
+				<label for="hora3">Hora 3: </label>
+				<input id="hora3" type="time" class="form-control"> </input>
+			</div>
+		</div>
+			<div class="form-row">
+				<div class="form group col-md-6">
+				<label for="nomePaciente">Nome do paciente </label>
+				<input id="nomePaciente" type="text" class="form-control"> </input>
+			</div>
+			<div class="form group col-md-6">
+				<label for="telefonePaciente">Telefone do paciente (11): </label>
+				<input id="telefonePaciente" name="phone" type="text" class="form-control"> </input>
+			</div>
+		</div></br>
+		<input class="btn btn-primary" id="enviar" type="submit" value="enviar"> </input>
+		<input class="btn btn-info" id="enviar_mobile" type="submit" value="enviar por celular"> </input>
+		</div>
+	</form>
+		<script src="js/jquery-3.4.1.min.js"> </script>
+		<script src="js/bootstrap.bundle.min.js"> </script>
 		<script src="js/dadosUnidades.js"> </script>
 		<script src="js/funcoes.js"> </script>
 		<script src="js/comportamentoPagina.js"> </script>
 		<script src="js/enviar.js"> </script>
-	</div>
 </body>
 </html>

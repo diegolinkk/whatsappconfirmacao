@@ -11,12 +11,12 @@ function formatarData(data){
 	return dataFormatada + "(" + diaDaSemana[numeroDaSemana] + ")";
 }
 function mostraDataTC(){
-	var spanTC = document.querySelector("#spanTesteDeContato");
-	spanTC.classList.remove("escondido");
+	var divTc = document.querySelector("#divTesteDeContato");
+	divTc.removeAttribute("hidden");
 }
 function escondeDataTC(){
-	var spanTC = document.querySelector("#spanTesteDeContato");
-	spanTC.classList.add("escondido");
+	var divTc = document.querySelector("#divTesteDeContato");
+	divTc.setAttribute("hidden","");
 }
 function txtNegrito(texto){
 	return "*" + texto + "*";
